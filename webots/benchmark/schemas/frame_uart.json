@@ -1,0 +1,45 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "EB15_UART_10B_Frame_Schema",
+  "description": "Schema de validação do frame binário serial de 10 bytes entre ESP32-S3 e Arduino Uno.",
+  "type": "object",
+  "properties": {
+    "preamble": {
+      "type": "integer",
+      "description": "Byte de sincronização fixo (0xAA)",
+      "minimum": 170,
+      "maximum": 170
+    },
+    "steps_j4": {
+      "type": "integer",
+      "description": "Passos absolutos da Junta 4 (int16_t, little-endian)",
+      "minimum": -32768,
+      "maximum": 32767
+    },
+    "steps_j5": {
+      "type": "integer",
+      "description": "Passos absolutos da Junta 5 (int16_t, little-endian)",
+      "minimum": -32768,
+      "maximum": 32767
+    },
+    "steps_j6": {
+      "type": "integer",
+      "description": "Passos absolutos da Junta 6 (int16_t, little-endian)",
+      "minimum": -32768,
+      "maximum": 32767
+    },
+    "duration_ms": {
+      "type": "integer",
+      "description": "Duração coordenada do segmento em milissegundos (uint16_t, little-endian). Zero indica E-STOP.",
+      "minimum": 0,
+      "maximum": 65535
+    },
+    "checksum": {
+      "type": "integer",
+      "description": "Byte de paridade XOR calculado sobre os primeiros 9 bytes.",
+      "minimum": 0,
+      "maximum": 255
+    }
+  },
+  "required": ["preamble", "steps_j4", "steps_j5", "steps_j6", "duration_ms", "checksum"]
+}

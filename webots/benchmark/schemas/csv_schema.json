@@ -1,0 +1,67 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "EB15_Benchmark_CSV_Schema",
+  "description": "Schema para validação dos dados de telemetria normalizados gerados pelo Adaptador Geral de Benchmark.",
+  "type": "object",
+  "properties": {
+    "timestamp": {
+      "type": "number",
+      "description": "Timestamp epoch da coleta no computador host (segundos)."
+    },
+    "source": {
+      "type": "string",
+      "enum": ["eb15", "ursim"],
+      "description": "Ambiente de origem da telemetria."
+    },
+    "sequence": {
+      "type": "integer",
+      "description": "Identificador do segmento ou waypoint correspondente na trajetória (0-based)."
+    },
+    "q1": { "type": "number", "description": "Ângulo medido da Junta 1 (graus)." },
+    "q2": { "type": "number", "description": "Ângulo medido da Junta 2 (graus)." },
+    "q3": { "type": "number", "description": "Ângulo medido da Junta 3 (graus)." },
+    "q4": { "type": "number", "description": "Ângulo medido da Junta 4 (graus)." },
+    "q5": { "type": "number", "description": "Ângulo medido da Junta 5 (graus)." },
+    "q6": { "type": "number", "description": "Ângulo medido da Junta 6 (graus)." },
+    "qd1": { "type": "number", "description": "Velocidade estimada da Junta 1 (deg/s)." },
+    "qd2": { "type": "number", "description": "Velocidade estimada da Junta 2 (deg/s)." },
+    "qd3": { "type": "number", "description": "Velocidade estimada da Junta 3 (deg/s)." },
+    "qd4": { "type": "number", "description": "Velocidade estimada da Junta 4 (deg/s)." },
+    "qd5": { "type": "number", "description": "Velocidade estimada da Junta 5 (deg/s)." },
+    "qd6": { "type": "number", "description": "Velocidade estimada da Junta 6 (deg/s)." },
+    "qdd1": { "type": "number", "description": "Aceleração estimada da Junta 1 (deg/s²)." },
+    "qdd2": { "type": "number", "description": "Aceleração estimada da Junta 2 (deg/s²)." },
+    "qdd3": { "type": "number", "description": "Aceleração estimada da Junta 3 (deg/s²)." },
+    "qdd4": { "type": "number", "description": "Aceleração estimada da Junta 4 (deg/s²)." },
+    "qdd5": { "type": "number", "description": "Aceleração estimada da Junta 5 (deg/s²)." },
+    "qdd6": { "type": "number", "description": "Aceleração estimada da Junta 6 (deg/s²)." },
+    "tcp_x": { "type": "number", "description": "Posição cartesiana X do TCP (mm)." },
+    "tcp_y": { "type": "number", "description": "Posição cartesiana Y do TCP (mm)." },
+    "tcp_z": { "type": "number", "description": "Posição cartesiana Z do TCP (mm)." },
+    "tcp_rx": { "type": "number", "description": "Orientação cartesiana Rx do TCP (graus)." },
+    "tcp_ry": { "type": "number", "description": "Orientação cartesiana Ry do TCP (graus)." },
+    "tcp_rz": { "type": "number", "description": "Orientação cartesiana Rz do TCP (graus)." },
+    "state": {
+      "type": "string",
+      "enum": ["MOVING", "DONE"],
+      "description": "Estado operacional do movimento."
+    },
+    "error_code": {
+      "type": "number",
+      "description": "Magnitude média do erro PID em repouso no final do segmento."
+    },
+    "trigger": {
+      "type": "integer",
+      "enum": [0, 1],
+      "description": "Indicador de borda do trigger de sincronismo (1 = ativo durante o movimento, 0 = inativo)."
+    }
+  },
+  "required": [
+    "timestamp", "source", "sequence",
+    "q1", "q2", "q3", "q4", "q5", "q6",
+    "qd1", "qd2", "qd3", "qd4", "qd5", "qd6",
+    "qdd1", "qdd2", "qdd3", "qdd4", "qdd5", "qdd6",
+    "tcp_x", "tcp_y", "tcp_z", "tcp_rx", "tcp_ry", "tcp_rz",
+    "state", "error_code", "trigger"
+  ]
+}

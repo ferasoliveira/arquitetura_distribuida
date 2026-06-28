@@ -1,0 +1,63 @@
+#VRML_SIM R2025a utf8
+
+# Mundo HIL local e reproduzível. O PROTO UR10e e seus assets são cópias
+# integrais da release oficial Cyberbotics Webots R2025a (Apache-2.0).
+EXTERNPROTO "../protos/UR10e.proto"
+
+WorldInfo {
+  info [
+    "EB15 HIL Co-Simulation World"
+    "Proxy cinemático e dinâmico: UR10e oficial Webots R2025a"
+    "Controle e feedback: hil_bridge.py"
+  ]
+  title "EB15 HIL - UR10e R2025a"
+  basicTimeStep 5
+  gravity 9.81
+  physicsDisableAngularThreshold 0.01
+  physicsDisableLinearThreshold 0.01
+}
+
+Viewpoint {
+  orientation -0.1505708554 0.7746188826 0.6142426265 0.6129878675
+  position -2.8 -1.4 2.3
+  near 0.05
+  exposure 1.7
+}
+
+Background {
+  skyColor [ 0.65 0.75 0.90 ]
+}
+
+DirectionalLight {
+  ambientIntensity 1
+  direction -0.4 0.3 -1
+  intensity 2
+}
+
+Solid {
+  translation 0 0 -0.06
+  locked TRUE
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColor 0.35 0.38 0.42
+        roughness 0.8
+      }
+      geometry Box {
+        size 4 4 0.1
+      }
+    }
+  ]
+  boundingObject Box {
+    size 4 4 0.1
+  }
+}
+
+UR10e {
+  translation 0 0 0
+  name "EB15_proxy"
+  controller "hil_bridge"
+  supervisor TRUE
+  selfCollision FALSE
+  staticBase TRUE
+}

@@ -1,0 +1,23 @@
+# Artefatos de build do firmware
+build/
+.build/
+managed_components/
+*.elf
+*.hex
+*.bin
+*.eep
+*.o
+
+# Python
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# Saídas de execução / telemetria
+output/
+*.log
+*.vcd
+
+# Sistema
+.DS_Store
+Thumbs.db

@@ -1,0 +1,31 @@
+#VRML_SIM R2025a utf8
+
+EXTERNPROTO "../protos/UR10e.proto"
+
+WorldInfo {
+  basicTimeStep 16
+}
+
+Viewpoint {
+  orientation -0.1505708554 0.7746188826 0.6142426265 0.6129878675
+  position -2.8 -1.4 2.3
+  exposure 1.7
+}
+
+Background {
+  skyColor [ 0.65 0.75 0.90 ]
+}
+
+DirectionalLight {
+  ambientIntensity 1
+  direction -0.4 0.3 -1
+  intensity 2
+}
+
+UR10e {
+  translation 0 0 0
+  name "UR10e_load_test"
+  controller "<none>"
+  selfCollision FALSE
+  staticBase TRUE
+}

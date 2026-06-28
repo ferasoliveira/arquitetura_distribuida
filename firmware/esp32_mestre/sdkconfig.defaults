@@ -1,0 +1,53 @@
+# sdkconfig.defaults — ESP32-S3 EB15 Mestre
+# Gerado automaticamente; não editar manualmente.
+# Altere os valores aqui e rode "idf.py reconfigure" para aplicar.
+
+# Alvo: ESP32-S3
+CONFIG_IDF_TARGET="esp32s3"
+
+# Dual-core habilitado (Core 0 = rede, Core 1 = controle)
+CONFIG_FREERTOS_UNICORE=n
+
+# Tick rate FreeRTOS = 1 kHz → resolução de 1 ms
+CONFIG_FREERTOS_HZ=1000
+
+# Stack mínima de tarefas idle
+CONFIG_FREERTOS_IDLE_TASK_STACKSIZE=1536
+
+# Modo de operação da UART (driver completo)
+CONFIG_UART_ISR_IN_IRAM=y
+
+# Log de nível INFO por padrão (DEBUG em QEMU)
+CONFIG_LOG_DEFAULT_LEVEL_INFO=y
+
+# Flash SPI a 80 MHz
+CONFIG_ESPTOOLPY_FLASHFREQ_80M=y
+
+# Particionar flash: app em 0x10000, tamanho 3MB
+CONFIG_PARTITION_TABLE_SINGLE_APP=y
+
+# Habilitar FPU do Xtensa (acelera FK/IK/Curva-S)
+CONFIG_ESP32S3_DEFAULT_CPU_FREQ_240=y
+
+# Wi-Fi — credenciais configuráveis (sobrescrever em sdkconfig.local se necessário)
+CONFIG_EB15_WIFI_SSID="EB15_Network"
+CONFIG_EB15_WIFI_PASS="eb15password"
+
+# Wi-Fi station mode
+CONFIG_ESP_WIFI_STATIC_RX_BUFFER_NUM=10
+CONFIG_ESP_WIFI_DYNAMIC_RX_BUFFER_NUM=32
+
+# OpenCores Ethernet emulado pelo QEMU Espressif. O driver so e inicializado
+# quando o firmware e compilado com EB15_QEMU=1.
+CONFIG_ETH_USE_OPENETH=y
+# Buffers DMA pequenos PROPOSITAIS. Testei aumentar (RX=32,TX=8): eliminou os ~828
+# "RX frame dropped"/run, MAS quebrou o controle de J1-J3 (drift/runaway até 130°) —
+# com buffers grandes os frames atrasados são ENTREGUES OBSOLETOS em vez de descartados,
+# e o PID de malha fechada amplifica a leitura velha. Com RX=4 o frame velho é dropado
+# e o ESP relê fresco no ciclo seguinte → laço estável (15/18 vs 8/18). NÃO aumentar.
+CONFIG_ETH_OPENETH_DMA_RX_BUFFER_NUM=4
+CONFIG_ETH_OPENETH_DMA_TX_BUFFER_NUM=1
+
+# HTTP server
+CONFIG_HTTPD_MAX_REQ_HDR_LEN=512
+CONFIG_HTTPD_MAX_URI_LEN=512

@@ -1,0 +1,2 @@
+# Arquivo documental: o CMakeLists.txt de nível superior fica em ../CMakeLists.txt.
+

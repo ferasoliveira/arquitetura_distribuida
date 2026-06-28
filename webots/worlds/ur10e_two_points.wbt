@@ -1,0 +1,78 @@
+#VRML_SIM R2025a utf8
+
+EXTERNPROTO "../protos/UR10e.proto"
+
+WorldInfo {
+  title "UR10e - teste visual de dois pontos"
+  basicTimeStep 16
+  gravity 0 0 -9.81
+}
+
+Viewpoint {
+  orientation -0.1505708554 0.7746188826 0.6142426265 0.6129878675
+  position -2.8 -1.4 2.3
+  near 0.05
+  exposure 1.7
+}
+
+Background {
+  skyColor [
+    0.72 0.80 0.90
+  ]
+}
+
+DirectionalLight {
+  ambientIntensity 1
+  direction -0.4 0.3 -1
+  intensity 2
+}
+
+Solid {
+  translation 0 0 -0.06
+  locked TRUE
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColor 0.35 0.38 0.42
+        roughness 0.8
+      }
+      geometry Box {
+        size 4 4 0.1
+      }
+    }
+  ]
+  boundingObject Box {
+    size 4 4 0.1
+  }
+}
+
+Solid {
+  translation 0 0 0.2
+  locked TRUE
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColor 0.15 0.18 0.22
+        metalness 0.6
+        roughness 0.35
+      }
+      geometry Cylinder {
+        height 0.4
+        radius 0.22
+      }
+    }
+  ]
+  boundingObject Cylinder {
+    height 0.4
+    radius 0.22
+  }
+}
+
+UR10e {
+  translation 0 0 0.4
+  name "UR10e_two_points"
+  controller "ur10e_two_points"
+  supervisor FALSE
+  selfCollision FALSE
+  staticBase TRUE
+}

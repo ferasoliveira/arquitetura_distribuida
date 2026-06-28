@@ -1,0 +1,125 @@
+# ============================================================================
+# config.yaml — Configuração Central do Passo 3
+# TCC Fernando Oliveira — Passo 3: Ambiente Virtual, Pontes e Simulação
+#
+# Este arquivo é a fonte de verdade para portas, timeouts, parâmetros de
+# ruído e caminhos. Altere aqui para adaptar sem modificar o código.
+# ============================================================================
+
+# --- Rede e Portas ---
+network:
+  host: "127.0.0.1"
+
+  # Firmwares reais emulados (ESP32 no QEMU; Uno no simavr)
+  rtde_eb15_port:   30003   # RTDE-EB15 proprietário do ESP32 real no QEMU
+  arduino_sim_port: 30100   # UART1 do ESP no QEMU (ponte 1)
+  stepdir_esp_port: 30101   # Step/Dir J1–J3 (ESP32 → ponte HIL)
+  stepdir_uno_port: 30102   # Step/Dir J4–J6 (Arduino → ponte HIL)
+  encoder_esp_port: 30103   # AS5600 J1–J3 (ponte HIL → ESP32)
+  encoder_uno_port: 30104   # AS5600 J4–J6 (ponte HIL → Arduino)
+  bridge2_webots_port: 30301 # canal interno ponte 2 ↔ controlador Webots
+  bridge3_webots_port: 30302 # canal interno ponte 3 ↔ controlador Webots
+  simavr_uart_port:  30200
+  simavr_ctrl_port:  30201
+  simavr_step_port:  30202
+  simavr_encoder_port: 30203
+  http_user_port:   8080    # HTTP Modo User (interface web ESP32)
+
+  # URSim (Fase 4 — opcional)
+  ursim_host:       "127.0.0.1"
+  ursim_rtde_port:  30004   # RTDE oficial da Universal Robots
+  # Script port (realtime URScript) do URSim. No container Docker o 30003 interno
+  # é mapeado para 31003 no host para NÃO colidir com o RTDE-EB15 (host 30003).
+  ursim_script_port: 31003
+  ursim_dashboard_port: 29999   # Dashboard (power on / brake release / modo remoto)
+
+# --- Timeouts (segundos) ---
+timeouts:
+  uart_ack:           0.500   # Aguarda ACK do Arduino
+  uart_done:          5.000   # Aguarda DONE do Arduino
+  rtde_heartbeat:    10.000   # Timeout do heartbeat RTDE
+  socket_connect:     2.000   # Conexão a firmwares simulados
+  bridge_response:    0.020   # Resposta da ponte HIL (20 ms = 2 ciclos)
+  health_check:       5.000   # Aguarda health check dos processos
+
+# --- Parâmetros do Robô ---
+robot:
+  control_hz:    200     # Frequência da malha de controle (Hz)
+  telemetry_hz:   50     # Frequência de telemetria RTDE (Hz)
+  basic_timestep:  5     # basicTimeStep do Webots (ms)
+
+  # Limites de junta EB15 (graus)
+  joint_limits:
+    min: [-170, -45, -120, -180, -90, -360]
+    max: [ 170, 180,  120,  180,  90,  360]
+
+  # Velocidades máximas por junta (deg/s)
+  max_speed_deg_s: [45, 45, 45, 90, 90, 90]
+
+  # Transmissão mecânica
+  motor_steps: 200          # Passos/volta do NEMA 17
+  microstep:   4            # 1/4 micropasso
+  reduction:   1.0          # Redução (placeholder — 1.0 = direto)
+  # steps_per_deg = motor_steps × microstep × reduction / 360 ≈ 2.222
+
+# --- Parâmetros de Simulação ---
+simulation:
+  noise_deg:         0.0    # Ruído gaussiano nos encoders (graus, 0 = determinístico)
+  latency_ms:        0.0    # Latência artificial adicionada à comunicação (ms)
+  packet_loss_pct:   0.0    # Probabilidade de perda de pacote (%, 0–100)
+  seed:              42     # Seed para reprodutibilidade do ruído (argparse pode sobrescrever)
+
+# --- Webots ---
+webots:
+  world_file:  "worlds/eb15_hil.wbt"
+  headless:    true
+  mode:        "fast"   # fast | realtime | run
+
+# --- Paths ---
+paths:
+  trajectories:  "benchmark/trajectories"
+  output_csv:    "output"
+  logs:          "output/logs"
+
+# --- CSV Schema ---
+csv:
+  columns:
+    - timestamp
+    - source           # eb15 | ursim
+    - sequence
+    - q1
+    - q2
+    - q3
+    - q4
+    - q5
+    - q6
+    - q_ref1
+    - q_ref2
+    - q_ref3
+    - q_ref4
+    - q_ref5
+    - q_ref6
+    - qd1
+    - qd2
+    - qd3
+    - qd4
+    - qd5
+    - qd6
+    - qdd1
+    - qdd2
+    - qdd3
+    - qdd4
+    - qdd5
+    - qdd6
+    - tcp_x
+    - tcp_y
+    - tcp_z
+    - tcp_rx
+    - tcp_ry
+    - tcp_rz
+    - tcp_ref_x
+    - tcp_ref_y
+    - tcp_ref_z
+    - state
+    - error_code
+    - trigger
