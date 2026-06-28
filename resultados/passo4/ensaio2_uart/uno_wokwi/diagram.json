@@ -1,0 +1,40 @@
+{
+  "version": 1,
+  "author": "Antigravity",
+  "editor": "wokwi",
+  "parts": [
+    {
+      "type": "board-uno",
+      "id": "uno",
+      "top": 0.0,
+      "left": 0.0,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btn_trigger",
+      "top": 100.0,
+      "left": -100.0,
+      "attrs": {
+        "color": "blue"
+      }
+    },
+    {
+      "type": "wokwi-logic-analyzer",
+      "id": "logic",
+      "top": -200.0,
+      "left": -100.0,
+      "attrs": {}
+    }
+  ],
+  "connections": [
+    [ "uno:9", "btn_trigger:1.l", "blue", [] ],
+    [ "uno:GND.1", "btn_trigger:2.l", "black", [] ],
+    [ "uno:9", "logic:D0", "blue", [] ],
+    [ "uno:2", "logic:D1", "green", [] ],
+    [ "uno:0", "logic:D2", "yellow", [] ],
+    [ "uno:1", "logic:D3", "orange", [] ],
+    [ "uno:GND.2", "logic:GND", "black", [] ]
+  ],
+  "dependencies": {}
+}

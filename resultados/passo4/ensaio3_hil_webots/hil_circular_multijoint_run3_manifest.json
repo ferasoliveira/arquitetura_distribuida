@@ -1,0 +1,19 @@
+{
+  "schema_version": "1.0",
+  "timestamp_start": 1782171862.651,
+  "timestamp_end": 1782172264.879,
+  "duration_s": 402.229,
+  "target": "eb15",
+  "trajectory": "circular_multijoint",
+  "seed": 42,
+  "headless": true,
+  "status": "ok",
+  "eb15": {
+    "samples": 15556,
+    "csv": "benchmark_circular_multijoint_eb15.csv"
+  },
+  "ursim": {
+    "samples": 0,
+    "csv": null
+  }
+}

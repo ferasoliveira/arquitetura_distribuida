@@ -1,0 +1,64 @@
+{
+  "ensaio": "1_carga_web",
+  "status": "REPROVADO",
+  "timestamp": "2026-06-21T23:03:19",
+  "resultados": {
+    "baseline": {
+      "jitter": {
+        "n_ciclos": 12405,
+        "coletado": true,
+        "jitter_max_us": 65552.0,
+        "jitter_p99_us": 29680.0,
+        "jitter_rms_us": 10009.401,
+        "jitter_mean_us": 7642.665,
+        "passos_perdidos": 9427
+      },
+      "http": {
+        "total": 0,
+        "errors": 0,
+        "error_rate_pct": 0.0
+      },
+      "csv": "C:\\Users\\ferna\\OneDrive\\Área de Trabalho\\TCC_Fernando\\Códigos\\resultados\\passo4\\ensaio1_carga_web\\jitter_baseline.csv"
+    },
+    "carga_moderada": {
+      "jitter": {
+        "n_ciclos": 3091,
+        "coletado": true,
+        "jitter_max_us": 61022.0,
+        "jitter_p99_us": 27366.0,
+        "jitter_rms_us": 9349.77,
+        "jitter_mean_us": 7272.35,
+        "passos_perdidos": 2237
+      },
+      "http": {
+        "total": 863,
+        "errors": 687,
+        "error_rate_pct": 79.606,
+        "achieved_rps": 14.383,
+        "latency_mean_ms": 41.716,
+        "latency_p99_ms": 191.598
+      },
+      "csv": "C:\\Users\\ferna\\OneDrive\\Área de Trabalho\\TCC_Fernando\\Códigos\\resultados\\passo4\\ensaio1_carga_web\\jitter_carga_moderada.csv"
+    },
+    "carga_severa": {
+      "jitter": {
+        "n_ciclos": 3091,
+        "coletado": true,
+        "jitter_max_us": 61022.0,
+        "jitter_p99_us": 27366.0,
+        "jitter_rms_us": 9349.77,
+        "jitter_mean_us": 7272.35,
+        "passos_perdidos": 2237
+      },
+      "http": {
+        "total": 3336,
+        "errors": 2995,
+        "error_rate_pct": 89.7782,
+        "achieved_rps": 55.6,
+        "latency_mean_ms": 70.941,
+        "latency_p99_ms": 581.022
+      },
+      "csv": "C:\\Users\\ferna\\OneDrive\\Área de Trabalho\\TCC_Fernando\\Códigos\\resultados\\passo4\\ensaio1_carga_web\\jitter_carga_severa.csv"
+    }
+  }
+}

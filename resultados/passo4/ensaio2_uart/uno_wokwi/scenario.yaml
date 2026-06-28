@@ -1,0 +1,9 @@
+name: 'Validação de Latência de Trigger'
+version: 1
+steps:
+  - delay: 50ms
+  - set-control:
+      part-id: btn_trigger
+      control: pressed
+      value: 1
+  - delay: 100ms

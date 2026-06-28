@@ -1,0 +1,19 @@
+{
+  "schema_version": "1.0",
+  "timestamp_start": 1782097300.908,
+  "timestamp_end": 1782097439.281,
+  "duration_s": 138.373,
+  "target": "both",
+  "trajectory": "linear_x",
+  "seed": 42,
+  "headless": true,
+  "status": "ok",
+  "eb15": {
+    "samples": 2900,
+    "csv": "benchmark_linear_x_eb15.csv"
+  },
+  "ursim": {
+    "samples": 2923,
+    "csv": "benchmark_linear_x_ursim.csv"
+  }
+}

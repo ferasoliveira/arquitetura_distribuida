@@ -1,0 +1,11 @@
+﻿Junta,Nó,Modo,"Alvo méd.
+(°)","Prec. méd.
+|q−alvo| (°)","Prec. máx
+(°)","Sobress. máx
+obs. (°)",N wp
+J1,base/QEMU,lockstep,22.1,0.32,0.60,0.45,15
+J2,base/QEMU,lockstep,11.7,0.30,0.47,0.48,15
+J3,base/QEMU,lockstep,7.4,0.24,0.53,0.53,15
+J4,punho/simavr,feedforward,16.1,0.19,0.22,0.17,12
+J5,punho/simavr,feedforward,8.0,0.23,0.30,0.30,12
+J6,punho/simavr,feedforward,n.m.,n.m.,n.m.,n.m.,0

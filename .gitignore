@@ -17,6 +17,8 @@ __pycache__/
 output/
 *.log
 *.vcd
+# ...exceto os traços de resultado arquivados (dados brutos do TCC)
+!resultados/**/*.vcd
 
 # Sistema
 .DS_Store

@@ -1,0 +1,19 @@
+{
+  "schema_version": "1.0",
+  "timestamp_start": 1782098326.193,
+  "timestamp_end": 1782098474.772,
+  "duration_s": 148.579,
+  "target": "both",
+  "trajectory": "pick_and_place",
+  "seed": 42,
+  "headless": true,
+  "status": "ok",
+  "eb15": {
+    "samples": 3069,
+    "csv": "benchmark_pick_and_place_eb15.csv"
+  },
+  "ursim": {
+    "samples": 3151,
+    "csv": "benchmark_pick_and_place_ursim.csv"
+  }
+}

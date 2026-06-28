@@ -62,7 +62,26 @@ webots/
   tests/               Testes de integração e smoke
 helpers/
   protocol.py          Definição compartilhada do formato dos quadros
+resultados/
+  passo4/              Dados brutos e figuras dos ensaios (ver seção abaixo)
 ```
+
+### Resultados dos ensaios (`resultados/passo4/`)
+
+Conjunto integral de dados brutos e figuras que sustentam os números do TCC,
+organizado por ensaio:
+
+| Pasta                | Conteúdo                                                        |
+|----------------------|----------------------------------------------------------------|
+| `dados_v4/`          | Séries temporais de convergência das juntas (lockstep) e referência URSim |
+| `ensaio1_carga_web/` | Relatório de *jitter* do laço de controle sob carga HTTP        |
+| `ensaio2_uart/`      | Integridade do protocolo serial e forma de onda fiel ao ciclo (`.vcd`) |
+| `ensaio3_hil_webots/`| Telemetria das trajetórias na co-simulação HIL com Webots       |
+| `ensaio4_benchmark/` | Ensaio comparativo EB15 × URSim                                 |
+| `figuras_tcc/`       | Figuras finais do documento (PNG/SVG)                           |
+
+Os `.csv` contêm as séries amostradas durante a execução; os `.json` trazem os
+relatórios e *manifests* (incluindo somas SHA-256 para auditoria).
 
 ---
 

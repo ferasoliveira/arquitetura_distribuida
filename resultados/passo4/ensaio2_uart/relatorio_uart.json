@@ -1,0 +1,34 @@
+{
+  "ensaio": "2_uart_real",
+  "status": "APROVADO",
+  "timestamp": "2026-06-21T23:03:53",
+  "escopo": "integrado_qemu_simavr_real",
+  "medido": {
+    "T2_ack_software_us": {
+      "mean": 11203.919,
+      "min": 2860.7,
+      "max": 55493.2,
+      "std": 8391.623,
+      "p99": 55493.2
+    },
+    "T3_trig_to_step_us": 10016.938,
+    "J_start_jitter_ns": 644.73684,
+    "vcd_passos": 20,
+    "vcd_coletado": true,
+    "frames": 100,
+    "ACK_recebidos": 105,
+    "DONE_recebidos": 105,
+    "NAK_recebidos": 0,
+    "BUSY_recebidos": 0,
+    "falhas_protocolo": 0
+  },
+  "calculado": {
+    "T1_uart_us": 868.056,
+    "cycle_granularidade_ns": 62.5
+  },
+  "csv": "C:\\Users\\ferna\\OneDrive\\Área de Trabalho\\TCC_Fernando\\Códigos\\resultados\\passo4\\ensaio2_uart\\latencias_uart.csv",
+  "sha256_csv": {
+    "latencias_uart.csv": "d032d956419ecccf62b1c06b0cbd1266b8c3f5135a894c2c3b21d29e7346af3c",
+    "tabela_protocolo_uart.csv": "562e01063c85d7ec3547f1ecde478e22a9c348ee3e422adee1064ee981ef1138"
+  }
+}

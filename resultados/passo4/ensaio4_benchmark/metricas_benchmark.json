@@ -1,0 +1,63 @@
+{
+  "ensaio": "4_benchmark_hil_vs_ursim_convergencia",
+  "status": "CONCLUIDO_COM_DIVERGENCIAS",
+  "metodo": "comparacao por waypoint das amostras SETTLED, sem alinhamento temporal",
+  "resumo_por_no": {
+    "QEMU_ESP32": {
+      "erro_max_deg": 52.851575,
+      "erro_medio_deg": 11.225149
+    },
+    "simavr_UNO": {
+      "erro_max_deg": 44.999991,
+      "erro_medio_deg": 4.317542
+    }
+  },
+  "tabelas": [
+    "C:\\Users\\ferna\\OneDrive\\Área de Trabalho\\TCC_Fernando\\Códigos\\resultados\\passo4\\ensaio4_benchmark\\tabela_eb15_ursim_convergencia.csv",
+    "C:\\Users\\ferna\\OneDrive\\Área de Trabalho\\TCC_Fernando\\Códigos\\resultados\\passo4\\ensaio4_benchmark\\tabela_resumo_eb15_ursim_por_junta.csv"
+  ],
+  "sha256_csv": {
+    "benchmark_circular_multijoint_run1_eb15.csv": "818acc61dfb8671609f08bec9a874dbb1ad8901b16f9d6340abb32592a082153",
+    "benchmark_circular_multijoint_run1_ursim.csv": "cb53aa37d1761a24e74a0c3103d23434817156683a87c1f847db4bce04fe22ac",
+    "benchmark_circular_multijoint_run2_eb15.csv": "1dcf7a847e4487f7720c17346bedb6a7392a606721506e47d67745292dbb8d94",
+    "benchmark_circular_multijoint_run2_ursim.csv": "baf86fc4575722b25fe6f97a4e48a4f1d197df72ce34e563763abae76a91dab0",
+    "benchmark_circular_multijoint_run3_eb15.csv": "5c6d7fb101537b9de7deff849811d2b422ef0f56ddf17c90835bbc645629a439",
+    "benchmark_circular_multijoint_run3_ursim.csv": "ce7d3aad782dac4e2d389d8e744732c7ab65987d3f6b986f2d968d47c56c444c",
+    "benchmark_linear_x_run1_eb15.csv": "bdc67f06e9db646671f73b4679752a4280625271835cb623bc5a8f9df50a6a72",
+    "benchmark_linear_x_run1_ursim.csv": "1c69c41a619a61640ce5ef7d628ee72675d9b848b2373b4fdfbda7bb40a8e5fe",
+    "benchmark_linear_x_run2_eb15.csv": "b25c36d2eb982ae902af46a6be58e586b82aeecf442de43b17b7f21e89608ad0",
+    "benchmark_linear_x_run2_ursim.csv": "678ff33176b0fd3796efe47257100ee0762a570e24e388a93295c5e21259be0e",
+    "benchmark_linear_x_run3_eb15.csv": "0fd7607cddf15bfd97c54dd88bfe2feea198f431dff2fc4cf54a116b52c366e2",
+    "benchmark_linear_x_run3_ursim.csv": "74cb83479b8b7f560cd99b4e06d9877cc6fe805344f342ddf573e187f9bbe1df",
+    "benchmark_pick_and_place_run1_eb15.csv": "fa9f581445b1a76083f03cee846bd8a45287433c7e4f35101d2de54e576caf74",
+    "benchmark_pick_and_place_run1_ursim.csv": "35c4c7e16804b28b5d342d64fba0f147c4ea519dd4aeebcca5177bf7f17c7623",
+    "benchmark_pick_and_place_run2_eb15.csv": "f521931a917cfba0dbb07fddc3b7246c4877a6d739ae82131c5283f2f163fd06",
+    "benchmark_pick_and_place_run2_ursim.csv": "d9fe4f038b5f4d43a032482bd882a64ec5ea9a53a84b4eec51cf302476e9c642",
+    "benchmark_pick_and_place_run3_eb15.csv": "16d5f95830b0099d3e327053aac4fe4fb3cae8e01028e696b175baeb61c96972",
+    "benchmark_pick_and_place_run3_ursim.csv": "83f2f33894a90216773680be2d2e4b858dc34a4a18d508fe9b9d542bc7d82268",
+    "tabela_eb15_ursim_convergencia.csv": "4acfdb900b9163906b291e7ed259f914b35d24b5576619882cbbf6af391c0023",
+    "tabela_resumo_eb15_ursim_por_junta.csv": "014f54d144a28d466ce8c52a539df6a031960c5da12f92d4d9f32e4216d427e8"
+  },
+  "limitacoes": [
+    "UR10e e proxy geometrico do EB15",
+    "QEMU funcional e nao-RT",
+    "relogios independentes; tracking temporal nao avaliado"
+  ],
+  "graficos": [
+    "C:\\Users\\ferna\\OneDrive\\Área de Trabalho\\TCC_Fernando\\Códigos\\resultados\\passo4\\ensaio4_benchmark\\graficos_benchmark\\lado_a_lado_3d_circular_multijoint_run1.png",
+    "C:\\Users\\ferna\\OneDrive\\Área de Trabalho\\TCC_Fernando\\Códigos\\resultados\\passo4\\ensaio4_benchmark\\graficos_benchmark\\lado_a_lado_3d_circular_multijoint_run1.svg",
+    "C:\\Users\\ferna\\OneDrive\\Área de Trabalho\\TCC_Fernando\\Códigos\\resultados\\passo4\\ensaio4_benchmark\\graficos_benchmark\\lado_a_lado_3d_linear_x_run1.png",
+    "C:\\Users\\ferna\\OneDrive\\Área de Trabalho\\TCC_Fernando\\Códigos\\resultados\\passo4\\ensaio4_benchmark\\graficos_benchmark\\lado_a_lado_3d_linear_x_run1.svg",
+    "C:\\Users\\ferna\\OneDrive\\Área de Trabalho\\TCC_Fernando\\Códigos\\resultados\\passo4\\ensaio4_benchmark\\graficos_benchmark\\lado_a_lado_3d_pick_and_place_run1.png",
+    "C:\\Users\\ferna\\OneDrive\\Área de Trabalho\\TCC_Fernando\\Códigos\\resultados\\passo4\\ensaio4_benchmark\\graficos_benchmark\\lado_a_lado_3d_pick_and_place_run1.svg",
+    "C:\\Users\\ferna\\OneDrive\\Área de Trabalho\\TCC_Fernando\\Códigos\\resultados\\passo4\\ensaio4_benchmark\\graficos_benchmark\\overlay_circular_multijoint_run1_J1.svg",
+    "C:\\Users\\ferna\\OneDrive\\Área de Trabalho\\TCC_Fernando\\Códigos\\resultados\\passo4\\ensaio4_benchmark\\graficos_benchmark\\overlay_linear_x_run1_J1.svg",
+    "C:\\Users\\ferna\\OneDrive\\Área de Trabalho\\TCC_Fernando\\Códigos\\resultados\\passo4\\ensaio4_benchmark\\graficos_benchmark\\overlay_pick_and_place_run1_J1.svg",
+    "C:\\Users\\ferna\\OneDrive\\Área de Trabalho\\TCC_Fernando\\Códigos\\resultados\\passo4\\ensaio4_benchmark\\graficos_benchmark\\sobreposicao_juntas_circular_multijoint_run1.png",
+    "C:\\Users\\ferna\\OneDrive\\Área de Trabalho\\TCC_Fernando\\Códigos\\resultados\\passo4\\ensaio4_benchmark\\graficos_benchmark\\sobreposicao_juntas_circular_multijoint_run1.svg",
+    "C:\\Users\\ferna\\OneDrive\\Área de Trabalho\\TCC_Fernando\\Códigos\\resultados\\passo4\\ensaio4_benchmark\\graficos_benchmark\\sobreposicao_juntas_linear_x_run1.png",
+    "C:\\Users\\ferna\\OneDrive\\Área de Trabalho\\TCC_Fernando\\Códigos\\resultados\\passo4\\ensaio4_benchmark\\graficos_benchmark\\sobreposicao_juntas_linear_x_run1.svg",
+    "C:\\Users\\ferna\\OneDrive\\Área de Trabalho\\TCC_Fernando\\Códigos\\resultados\\passo4\\ensaio4_benchmark\\graficos_benchmark\\sobreposicao_juntas_pick_and_place_run1.png",
+    "C:\\Users\\ferna\\OneDrive\\Área de Trabalho\\TCC_Fernando\\Códigos\\resultados\\passo4\\ensaio4_benchmark\\graficos_benchmark\\sobreposicao_juntas_pick_and_place_run1.svg"
+  ]
+}
